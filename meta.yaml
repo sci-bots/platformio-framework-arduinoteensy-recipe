@@ -1,6 +1,6 @@
 package:
   name: platformio-framework-arduinoteensy
-  version: 1.135.0
+  version: 1.136.0
 
 build:
   # If this is a new build for the same version, increment the build
@@ -10,7 +10,7 @@ build:
 
 requirements:
   build:
-    - platformio-platform-teensy
+    - platformio-platform-teensy >=2.0.0
 
   run:
-    - platformio-platform-teensy
+    - platformio-platform-teensy >=2.0.0
