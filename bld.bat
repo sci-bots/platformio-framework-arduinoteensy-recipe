@@ -2,7 +2,7 @@ set PLATFORM_IO_PACKAGE=framework-arduinoteensy
 set PKG_URL=https://dl.bintray.com/platformio/dl-packages/framework-arduinoteensy-1.136.0.tar.gz
 set FILENAME=framework-arduinoteensy-1.136.0.tar.gz
 set PKG_NAME=platformio-framework-arduinoteensy
-set WIRE_VERSION=0.1.2
+set WIRE_VERSION=0.1.3
 
 REM Download Windows binary.
 "%PYTHON%" -m wget "%PKG_URL%"
