@@ -1,14 +1,27 @@
 set PLATFORM_IO_PACKAGE=framework-arduinoteensy
-set PKG_URL=https://dl.bintray.com/platformio/dl-packages/%PLATFORM_IO_PACKAGE%-%PKG_VERSION%.tar.gz
-set FILENAME=%PLATFORM_IO_PACKAGE%-%PKG_VERSION%.tar.gz
+set PKG_URL=https://dl.bintray.com/platformio/dl-packages/framework-arduinoteensy-1.136.0.tar.gz
+set FILENAME=framework-arduinoteensy-1.136.0.tar.gz
+set PKG_NAME=platformio-framework-arduinoteensy
+
 REM Download Windows binary.
 "%PYTHON%" -m wget "%PKG_URL%"
 if errorlevel 1 exit 1
 mkdir "%PKG_NAME%"
-REM Extract files from from gz archive.
+REM Extract files from from tar.gz archive.
 tar xvf %FILENAME% -C "%PKG_NAME%"
-
 if errorlevel 1 exit 1
+
+REM Delete Wire library
+rmdir /S/Q "%PKG_NAME%\libraries\Wire"
+if errorlevel 1 exit 1
+
+"%PYTHON%" -m wget "https://github.com/sci-bots/Wire/archive/v0.1.tar.gz" -o Wire-v0.1.tar.gz
+if errorlevel 1 exit 1
+tar xvf Wire-v0.1.tar.gz
+if errorlevel 1 exit 1
+mv Wire-0.1 "%PKG_NAME%\libraries\Wire"
+if errorlevel 1 exit 1
+
 REM Copy contents to PlatformIO directory in Conda environment.
 set CONDA_PKGS_DIR=%PREFIX%\share\platformio\packages
 setlocal enableextensions
