@@ -15,11 +15,11 @@ REM Delete Wire library
 rmdir /S/Q "%PKG_NAME%\libraries\Wire"
 if errorlevel 1 exit 1
 
-"%PYTHON%" -m wget "https://github.com/sci-bots/Wire/archive/v0.1.tar.gz" -o Wire-v0.1.tar.gz
+"%PYTHON%" -m wget "https://github.com/sci-bots/Wire/archive/v0.1.1.tar.gz" -o Wire-v0.1.1.tar.gz
 if errorlevel 1 exit 1
-tar xvf Wire-v0.1.tar.gz
+tar xvf Wire-v0.1.1.tar.gz
 if errorlevel 1 exit 1
-mv Wire-0.1 "%PKG_NAME%\libraries\Wire"
+mv Wire-0.1.1 "%PKG_NAME%\libraries\Wire"
 if errorlevel 1 exit 1
 
 REM Copy contents to PlatformIO directory in Conda environment.
