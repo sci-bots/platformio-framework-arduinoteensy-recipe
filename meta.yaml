@@ -5,12 +5,11 @@ package:
 build:
   # If this is a new build for the same version, increment the build
   # number. If you do not include this key, it defaults to 0.
-  number: 0
-  script: pio platform install teensy --skip-default-package --with-package=framework-arduinoteensy
+  number: 2
 
 requirements:
   build:
-    - platformio-platform-teensy >=2.0.0
-
-  run:
-    - platformio-platform-teensy >=2.0.0
+    - python
+    - pywget
+    # Include `git`, since it includes `tar`
+    - git # [win]
